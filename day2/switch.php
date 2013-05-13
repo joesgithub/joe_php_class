@@ -19,7 +19,7 @@
 	<main>
 		<?php
 		// include appropriate content based on the link clicked
-		switch ( $_GET['page'] ) {
+		switch ( $_GET['page'] ) { 
 			case 'about':
 				include('content_about.php');
 				break;
