@@ -20,8 +20,8 @@ while( $row = $result->fetch_assoc() ):
 	?>
 
 <article class="post">
-	<h3><?php echo $row['title']; ?></h3>
-	<address class="postmeta">Posted on <?php echo $row['date']; ?> | in the category <?php echo $row['name']; ?> | By <?php echo $row['username']; ?></address>
+	<a href="index.php?page=single&amp;post_id=<?php echo $row['post_id']; ?>"><h3><?php echo $row['title']; ?></h3></a>
+	<address class="postmeta">Posted on <?php echo convert_date($row['date']); ?> | in the category <?php echo $row['name']; ?> | By <?php echo $row['username']; ?></address>
 	<p><?php echo $row['body']; ?></p>
 </article>
 <?php endwhile; ?>

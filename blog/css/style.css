@@ -1,56 +1,69 @@
+body {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+
+a {
+	text-decoration: none;
+	color: #00ABFD;
+}
+
 .container {
-	width: 960px;
-	margin: 0 auto;
-	border: solid 1px #00ABFD;
-	padding: 0;
+width: 960px;
+margin: 0 auto;
+border: solid 1px #00ABFD;
+padding: 0;
 }
 
 header {
-	background: #00ABFD;
-	margin-top: -21px;
+background: #00ABFD;
+margin-top: -21px;
 }
 
 nav ul a {
-	text-decoration: none;
-	background: #1F263F;
-	color: #E3E7EA;
-	padding: 3px;
-	margin: 5px;
+text-decoration: none;
+background: #1F263F;
+color: #E3E7EA;
+padding: 3px;
+margin: 5px;
 }
 
 nav ul a li {
-	display: inline-block;
-	list-style-type: none;
-	padding: 3px;
+display: inline-block;
+list-style-type: none;
+padding: 3px;
 }
 
 main {
-	float: right;
-	width: 710px;
-	margin-left: 40px;
+float: right;
+width: 710px;
+margin-left: 40px;
 }
 
 .sidebar {
-	float: right;
-	width: 200px;
+float: right;
+width: 200px;
 }
 
 footer {
-	margin: 0 auto -17px;
-	width: 960px;
-	background: #00ABFD;
+margin: 0 auto -17px;
+width: 960px;
+background: #00ABFD;
+}
+
+label, input, textarea {
+	display: block;
 }
 
 .cf:before,
 .cf:after {
   content: "";
-  display: block; 
+  display: block;
 }
 
 .cf:after {
-  clear: both;  
+  clear: both;
 }
 
 .cf {
-  zoom: 1; /* for old ie (trigger has layout) don't really need */  
+  zoom: 1; /* for old ie (trigger has layout) don't really need */
 }

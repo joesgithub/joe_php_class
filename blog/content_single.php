@@ -3,6 +3,8 @@
 //what post are we trying to show?
 $post_id = $_GET['post_id'];
 
+include('comment_parse.php');
+
 //set up a query to get the post that we're trying to view if it is public
 $query = "SELECT posts.*, categories.*, users.username, users.user_id
 FROM posts, categories, users
@@ -21,8 +23,8 @@ while( $row = $result->fetch_assoc() ):
 	?>
 
 <article class="post">
-	<h3><?php echo $row['title']; ?></h3>
-	<div class="postmeta">Posted on <?php echo $row['date']; ?>
+	<a href="index.php?page=single&amp;post_id=<?php echo $row['post_id']; ?>"><h3><?php echo $row['title']; ?></h3></a>
+	<div class="postmeta">Posted on <?php echo convert_date($row['date']); ?>
 		| in the category <?php echo $row['name']; ?>
 		| By <?php echo $row['username']; ?>
 	</div>
@@ -64,7 +66,14 @@ $result_comm->free(); ?>
 <?php endif; //comment results found ?>
 
 <?php
-endwhile;
+//only show the form if comments are allowed
+if( 1 == $row['allow_comments'] ):
+include( 'comment_form.php' );
+endif;
+?>
+
+<?php
+endwhile; //post was found
 ?>
 
 <?php else: ?>
