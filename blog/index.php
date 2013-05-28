@@ -6,6 +6,7 @@ include_once( 'functions.php' ); ?>
 <head>
 <meta charset="utf-8">
 <link rel="stylesheet" type="text/css" href="css/style.css" media="screen">
+<link rel="alternate" type="application/rss+xml" title="Rss Feed of Blog Posts" href="rss.php" />
 <title>Joe's Easy Blog</title>
 </head>
 <body>
@@ -20,6 +21,7 @@ include_once( 'functions.php' ); ?>
 		</ul>
 	</nav>
 </header>
+<?php include('searchform.php'); ?>
 
 <main>
 <?php
@@ -34,6 +36,9 @@ include_once( 'functions.php' ); ?>
 		break;
 		case 'single':
 			include( 'content_single.php' );
+		break;
+		case 'search':
+			include( 'content_search.php' );
 		break;
 		default:
 			include('content_home.php');
